@@ -4,15 +4,15 @@
 ## Global Alignment
 There are 3 major steps involved when performing global alignment:
 + [Creating a scoring matrix](#step-1-creating-a-scoring-matrix)
-+ Traceback
-+ Align sequences
++ [Traceback](#step-2-tracing-back)
++ [Align sequences](#step-3-aligning-the-sequences)
 
 ### Creating a Scoring Matrix
-Given 2 sequences *S<sub>1</sub>* and *S<sub>2</sub>* where *len(S<sub>1</sub>)=L<sub>1</sub>* and *len(S<sub>2</sub>)=L<sub>2</sub>* and *L<sub>1</sub> > L<sub>2</sub>*, we want to create a *(L<sub>1</sub>+1)x(L<sub>2</sub>+1)* matrix that we will fill using a scoring system.
+Given 2 sequences *S<sub>1</sub>* and *S<sub>2</sub>* where *len(S<sub>1</sub>)=L<sub>1</sub>* and *len(S<sub>2</sub>)=L<sub>2</sub>* and *L<sub>1</sub> > L<sub>2</sub>*, we want to find the best way to align them. Sequence alignment is used to find similarities between sequences and deduce functional, structural, and evolutionary relationships.
 
 Once the matrix is filled, we will traceback from the largest value (usually in the top-right cell of the matrix) to the bottom-left of the matrix.
 
-Following some traceback rules, we will create a sequence *S<sub>3</sub>* which will represent the sequence that maximizes the score and minimizes penalty based on our scoring system.
+Following some traceback rules, we will create an alignment which will sequence arrangement that maximizes the score and minimizes penalty based on our scoring system.
 
 Below is an example to illustrate all the steps and rules followed when performing global alignment.
 
@@ -94,19 +94,29 @@ gapRow|.|**s<sub>i</sub>**|cell_y|.|
 
 ---
 Completed matrix with 2 examples on how to calculate cell score: 
-![Image of completed scoring matrix](https://github.com/Mokeira/genomiks/blob/master/images/example.JPG)
+![Image of completed scoring matrix](https://github.com/Mokeira/genomiks/blob/master/images/example.JPG "Completed scoring matrix")
 
 ---
+
+#### Step 2: Tracing Back
+
++ Rule: While filling in the scoring matrix, draw arrows to each cell from the cell whose value maximized that cell's score.
+
+We use this arrows to trace back to the 0<sup>th</sup> column from the cell with the cell with the highest value.
+
+If, while tracing back, there are two or more paths, the one with the minimum cell score is chosen.
+
+Once the optimal path is identified, we move on to the last step: aligning the sequences.
+
+#### Step 3: Aligning the Sequences
+
+Completed matrix with 2 examples on how to calculate cell score: 
+![Image of completed scoring matrix](https://github.com/Mokeira/genomiks/blob/master/images/trace_example.JPG "Completed scoring matrix")
 
 Next steps:
 + Traceback steps
 + How to align sequences
 + Translate to coding problem
-
-
-
-
-
 
 
 
