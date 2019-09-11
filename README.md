@@ -94,7 +94,7 @@ gapRow|.|**s<sub>i</sub>**|cell_y|.|
 
 
 Completed matrix with 2 examples on how to calculate cell score: 
-![alt text](https://github.com/mokeira/genomiks/images/example.jpg "Scoring Matrix")
+![alt text](https://github.com/Mokeira/genomiks/blob/master/images/example.JPG "Scoring Matrix")
 
 
 
