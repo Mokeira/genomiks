@@ -93,6 +93,8 @@ gapRow|.|**s<sub>i</sub>**|cell_y|.|
 *final_cell_score = max(diagonal_score, vertical_score, horizontal_score)*
 
 
+Completed matrix with 2 examples on how to calculate cell score: 
+![alt text](https://github.com/mokeira/genomiks/images/example.jpg "Scoring Matrix")
 
 
 
