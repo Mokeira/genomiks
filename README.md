@@ -102,7 +102,7 @@ Completed matrix with 2 examples on how to calculate cell score:
 
 + Rule: While filling in the scoring matrix, draw arrows to each cell from the cell whose value maximized that cell's score.
 
-We use this arrows to trace back to the 0<sup>th</sup> column from the cell with the cell with the highest value.
+We use this arrows to trace back to the 0<sup>th</sup> column from the cell with the highest value.
 
 If, while tracing back, there are two or more paths, the one with the minimum cell score is chosen.
 
