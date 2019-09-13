@@ -123,13 +123,14 @@ T|.|.|.|.|
 A|.|.|.|.|
 gapRow|.|.|.|.|
 .|gapCol|T|C|G|	
+
 we would replace **G** with **_** in our sequence and keep **T**
 
 The path in our example only has diagonal arrows and gives us the following alignment:
 
 	A T C G
 	_ T C G
-	\*_ represents a gap
+	*_* represents a gap
 
 + Translate to coding problem
 
