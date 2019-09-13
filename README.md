@@ -136,22 +136,17 @@ The path in our example only has diagonal arrows and gives us the following alig
 ### Coding Challenge
 There is some sort of pattern followed in filling in the matrix.
 1. Set the first cell in the gap_row to 0
-	cell<sub>0,0</sub> = 0
+	
+	*cell<sub>0,0</sub> = 0*
+
 2. Fill the first row and column
-	cell<sub>i,0 </sub> = -i(gap_score) or cell<sub>i,0 </sub> = cell<sub>i-1</sub> _score+gap_score
-	cell<sub>0,j </sub> = -j(gap_score)
+	
+	*cell<sub>i,0 </sub> = -i(gap_score) or cell<sub>i,0 </sub> = cell<sub>i-1</sub> _score+gap_score*
 
-3. Starting from cell in the second column,second-last row, fill in the rest of the matrix by taking the max(diagonal_val,horizontal_val,vertical_val)
+	*cell<sub>0,j </sub> = -j(gap_score)*
 
+3. Starting from cell in the second column,second-last row, fill in the rest of the matrix by taking *max(diagonal_val,horizontal_val,vertical_val)*
 
-
-||||||
-----|----|----|----|---
-col/row number|j-1|j|.|.|
-i-1|.|.|.|
-i|.|cell_x|.|.|
-
-cell_x_score = max(cell<sub>i-1,j-1</sub>+match_score(char<sub>i</sub>,char<sub>j</sub>),cell<sub>i,j-1</sub>+gap_score,cell<sub>i-1,j</sub>+gap_score )
 
 In fact, after reading more into this, I discovered the [*Needleman-Wunsch Algorithm*](https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm) that does exactly what we need to do.
 
