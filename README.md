@@ -130,7 +130,7 @@ The path in our example only has diagonal arrows and gives us the following alig
 
 	A T C G
 	_ T C G
-	*_* represents a gap
+	_ represents a gap
 
 + Translate to coding problem
 
