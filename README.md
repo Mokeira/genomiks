@@ -114,10 +114,16 @@ The image below shows the completed matrix with the arrows drawn. The optimal pa
 + Rule: If the arrow does not point diagonally, we replace the character that the arrow is pointing towards with a gap.
 
 For example, if the following occurs:
-		
-	char_in_y_axis <-- cell
-						char_in_x_axis	
-	we would replace char_in_y_axis with _ in our sequence and keep char_in_x_axis
+
+||||||
+----|----|----|----|---
+G|.|<--- cell_x|.|.|
+C|.|.|.|.|
+T|.|.|.|.|
+A|.|.|.|.|
+gapRow|.|.|.|.|
+.|gapCol|T|C|G|	
+we would replace **G** with **_** in our sequence and keep **T**
 
 The path in our example only has diagonal arrows and gives us the following alignment:
 
