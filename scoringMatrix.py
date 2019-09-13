@@ -1,19 +1,15 @@
-def sequenceAligner(seq1, seq2):
+def sequenceAligner(seq1, seq2,score):
     scores={
-    'match': 2,
-    'mismatch': -2,
-    'gap': -4
+    'match': score[0],
+    'mismatch': score[1],
+    'gap': score[2]
     }
 
     m = len(seq1)
     n = len(seq2)
 
-    #create mxn scoring matrix
+    #m+1xn+1 scoring matrix
     scoring_matrix = [[None]*(n+1) for i in range (m+1)]
-
-    temp1=[[None]*(n+1) for i in range (m+1)]
-    temp2=scoring_matrix[:]
-    temp3=scoring_matrix[:]
 
     #init row1 and col1
     scoring_matrix[0][0] = 0
@@ -36,7 +32,6 @@ def sequenceAligner(seq1, seq2):
 
     for i in scoring_matrix[::-1]:
         print(i)
-    print('-'*10)
 
 def checkMatch(seq1,seq2,m,n):
     if seq1[m-1]==seq2[n-1]:
@@ -44,4 +39,6 @@ def checkMatch(seq1,seq2,m,n):
     else:
         return 'mismatch'
 
-sequenceAligner('ATCG','TCG')
+#sequenceAligner[seq1,seq2,[score]
+#score=[match,mismatch,gap]
+sequenceAligner('ATCG','TCG',[2,-2,-4])
