@@ -134,7 +134,7 @@ The path in our example only has diagonal arrows and gives us the following alig
 
 
 ### Coding Challenge
-There is some sort of pattern followed in filling in the matrix.
+There is some sort of pattern followed when filling in the matrix.
 1. Set the first cell in the gap_row to 0
 	
 	*cell<sub>0,0</sub> = 0*
