@@ -109,13 +109,23 @@ If, while tracing back, there are two or more paths, the one with the minimum ce
 Once the optimal path is identified, we move on to the last step: aligning the sequences.
 
 #### Step 3: Aligning the Sequences
+The image below shows the completed matrix with the arrows drawn. The optimal path has been highlighted. Following this path, we will apply some simple rules to get our alignment.
 
-Completed matrix with 2 examples on how to calculate cell score: 
 ![Image of completed scoring matrix](https://github.com/Mokeira/genomiks/blob/master/images/trace_example.JPG "Completed scoring matrix")
 
-Next steps:
-+ Traceback steps
-+ How to align sequences
++ Rule: If the arrow does not point diagonally, we replace the character that the arrow is pointing towards with a gap.
+
+For example, if the following occurs:
+		
+	char_in_y_axis <-- cell
+								char_in_x_axis	
+	we would replace char_in_y_axis with _ in our sequence and keep char_in_x_axis
+
+The path in our example only has diagonal arrows and gives us the following alignment:
+	A T C G
+	_ T C G
+	\*_ represents a gap
+
 + Translate to coding problem
 
 
