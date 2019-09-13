@@ -150,7 +150,8 @@ There is some sort of pattern followed when filling in the matrix.
 
 In fact, after reading more into this, I discovered the [*Needleman-Wunsch Algorithm*](https://en.wikipedia.org/wiki/Needleman%E2%80%93Wunsch_algorithm) that does exactly what we need to do.
 
-(Here is my implementation:)[https://github.com/Mokeira/genomiks/blob/master/scoringMatrix.py]
+[Here is my implementation:](https://github.com/Mokeira/genomiks/blob/master/scoringMatrix.py)
+
 Next steps:
 + Implement traceback functionality
 
