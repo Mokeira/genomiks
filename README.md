@@ -153,7 +153,7 @@ In fact, after reading more into this, I discovered the [*Needleman-Wunsch Algor
 Here is my implementation: [*scoringMatrix.py*](https://github.com/Mokeira/genomiks/blob/master/scoringMatrix.py)
 
 Next steps:
-+ Implement traceback functionality
++ Implement alignment functionality
 
 
 
