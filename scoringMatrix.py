@@ -52,19 +52,41 @@ def sequenceAligner(seq1, seq2,score):
 
     trace=[]
     temp = [len(scoring_matrix)-1,max_pos]
+    seq1_align=[]
+    seq2_align=[]
+
 
     while True:
         if temp == None:
             break;
+
         trace+=[scoring_matrix[temp[0]][temp[1]]]
+
+        #pos1,pos2 will be used during alignmnent to determine 'arrow direction'
+        pos1, pos2 = temp[:], temp[:]
+
         temp = trace_matrix[temp[0]][temp[1]]
+        pos2 = temp[:] if temp != None else pos2
 
-    print('Completed scoring matrix:\n ')
-    for i in scoring_matrix[::-1]:
-        print(i)
+        #alignment
+        if pos1[0]==pos2[0]: #vertical arrow
+            seq1_align+=[seq1[m-1]]
+            seq2_align+=['_']
 
-    print('\nValues in optimal trace-back path: ', trace)
+        elif pos1[1]==pos2[1]:#horizontal arrow
+            seq1_align+=[' ']
+            seq2_align+=[seq2[n-1]]
 
+        else: #diagonal arriw
+            seq1_align+=[seq1[m-1]]
+            seq2_align+=[seq2[n-1]]
+
+        m-=1
+        n-=1
+
+    print('Completed scoring matrix:\n',*[i  for i in scoring_matrix[::-1]], sep='\n')
+    #print(f'\nValues in optimal trace-back path: {trace}')
+    print(f"\nAligned sequences:\n {''.join(seq1_align[::-1])} \n {''.join(seq2_align[::-1])}")
 
 def checkMatch(seq1,seq2,m,n):
     if seq1[m-1]==seq2[n-1]:
@@ -72,6 +94,5 @@ def checkMatch(seq1,seq2,m,n):
     else:
         return 'mismatch'
 
-#sequenceAligner[seq1,seq2,[score]
-#score=[match,mismatch,gap]
+#sequenceAligner[seq1,seq2,[[match_score,mismatch_score,gap_score]]
 sequenceAligner('ATCG','TCG',[2,-2,-4])
