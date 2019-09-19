@@ -62,7 +62,7 @@ def sequenceAligner(seq1, seq2,score):
 
         trace+=[scoring_matrix[temp[0]][temp[1]]]
 
-        #pos1,pos2 will be used during alignmnent to determine 'arrow direction'
+        #pos1,pos2 will be used during alignment to determine 'arrow direction'
         pos1, pos2 = temp[:], temp[:]
 
         temp = trace_matrix[temp[0]][temp[1]]
@@ -77,7 +77,7 @@ def sequenceAligner(seq1, seq2,score):
             seq1_align+=[' ']
             seq2_align+=[seq2[n-1]]
 
-        else: #diagonal arriw
+        else: #diagonal arrow
             seq1_align+=[seq1[m-1]]
             seq2_align+=[seq2[n-1]]
 
